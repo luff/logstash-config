@@ -1,0 +1,12 @@
+
+HY_TIMESTAMP %{YEAR}-%{MONTHNUM}-%{MONTHDAY} %{HOUR}:%{MINUTE}:%{SECOND}
+HY_LOG_TAG \[[0-9]+\]
+HY_LOG_CHANNEL [^-]+
+HY_LOG_DETAIL .*
+
+HY_APPLOG %{HY_TIMESTAMP:timestamp},[0-9]{3} %{HY_LOG_TAG:tag} %{LOGLEVEL:level} %{HY_LOG_CHANNEL:channel}-%{HY_LOG_DETAIL:detail}
+
+HY_HTTPERR %{HY_TIMESTAMP:timestamp} %{NOTSPACE:c-ip} %{NOTSPACE:c-port} %{NOTSPACE:s-ip} %{NOTSPACE:s-port} %{NOTSPACE:cs-version} %{NOTSPACE:cs-method} %{NOTSPACE:cs-uri} %{NOTSPACE:sc-status} %{NOTSPACE:s-siteid} %{NOTSPACE:s-reason} %{NOTSPACE:s-queuename}
+
+HY_IISLOG %{HY_TIMESTAMP:timestamp} %{NOTSPACE:s-sitename} %{NOTSPACE:s-computername} %{NOTSPACE:s-ip} %{NOTSPACE:cs-method} %{NOTSPACE:cs-uri-stem} %{NOTSPACE:cs-uri-query} %{NOTSPACE:s-port} %{NOTSPACE:cs-username} %{NOTSPACE:c-ip} %{NOTSPACE:cs-version} %{NOTSPACE:csUser-Agent} %{NOTSPACE:cs-Cookie} %{NOTSPACE:cs-Referer} %{NOTSPACE:cs-host} %{NOTSPACE:sc-status} %{NOTSPACE:sc-substatus} %{NOTSPACE:sc-win32-status} %{NOTSPACE:sc-bytes} %{NOTSPACE:cs-bytes} %{NOTSPACE:time-taken}
+
